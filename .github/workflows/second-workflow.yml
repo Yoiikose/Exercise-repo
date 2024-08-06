@@ -1,0 +1,10 @@
+name: second-one
+on: issues
+jobs:
+  second-job:
+  runs-on: ubuntu-latest
+  steps:
+    - name: second-step-name
+      run: echo "&{{toJSON(github)}}"
+  
+  
