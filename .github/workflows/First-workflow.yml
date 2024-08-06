@@ -4,12 +4,16 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
+    - name: Get code
+      uses: actions/checkout@v3
+    - name: Dependencies
+      run: npm ci
     - name: Lint
-      run: eslint --ext .jsx --fix src
+      run: npm run lint
     - name: Test
-      run: vitest run
+      run: npm run test
     - name: Build
-      run: vite build
+      run: npm run build
     - name:  Message
       run: echo "Output message"
       
