@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Lint
-      run: ddd
+      run: eslint --ext .jsx --fix src
     - name: Test
-      run: ddd
+      run: vitest run
     - name: Build
-      run: ddd
+      run: vite build
     - name:  Message
       run: echo "Output message"
       
